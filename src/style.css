@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: linear-gradient(skyblue, wheat);
+    min-height: 100vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1,
+h2 {
+    text-align: center;
+    padding: 2rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10vw;
+    margin-top: 50px;
+    height: 40px;
+}
+
+.cross,
+.zero {
+    padding: 15px;
+    background-color: rgb(218, 179, 131);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.cross:hover,
+.zero:hover {
+    transform: scale(1.1);
+}
+
+.cube-container {
+    height: 70vh;
+    display: grid;
+    width: 40%;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.selected {
+    background-color: blue;
+}
+
+.cube-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    width: 100%;
+    height: 100%;
+}
+
+.cube {
+    width: 100%;
+    height: 100%;
+    font-size: 2rem;
+    text-align: center;
+    background-color: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
