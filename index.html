@@ -7,7 +7,7 @@
     <script defer src="bundle.js"></script></head>
 
     <body>
-        <h1>Welcome to the Game</h1>
+        <h1>Ready to lose</h1>
         <h2>Choose your side</h2>
         <div class="buttons">
             <button type="submit" class="cross">X</button>
@@ -15,16 +15,20 @@
         </div>
         <div class="game">
             <div class="cube-container">
+                <div class="cube-wrapper" style = "border-top: none; border-left: none;" ><button class="cube"></button></div>
+                <div class="cube-wrapper" style="border-top: none;"><button class="cube"></button></div>
+                <div class="cube-wrapper" style="border-top: none; border-right:none"><button class="cube"></button></div>
+                <div class="cube-wrapper" style="border-left: none;"><button class="cube"></button></div>
                 <div class="cube-wrapper"><button class="cube"></button></div>
-                <div class="cube-wrapper"><button class="cube"></button></div>
-                <div class="cube-wrapper"><button class="cube"></button></div>
-                <div class="cube-wrapper"><button class="cube"></button></div>
-                <div class="cube-wrapper"><button class="cube"></button></div>
-                <div class="cube-wrapper"><button class="cube"></button></div>
-                <div class="cube-wrapper"><button class="cube"></button></div>
-                <div class="cube-wrapper"><button class="cube"></button></div>
-                <div class="cube-wrapper"><button class="cube"></button></div>
+                <div class="cube-wrapper" style="border-right: none;"><button class="cube"></button></div>
+                <div class="cube-wrapper" style="border-left: none; border-bottom: none;"><button class="cube"></button></div>
+                <div class="cube-wrapper" style="border-bottom: none;"><button class="cube"></button></div>
+                <div class="cube-wrapper" style="border-right: none; border-bottom: none;"><button class="cube"></button></div>
             </div>
+        </div>
+
+        <div class="newgame">
+            <button>Wanna try Again !!! Huh </button>
         </div>
     </body>
 </html>
