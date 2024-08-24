@@ -9,6 +9,7 @@ function gameController() {
     const zero = document.querySelector('.zero');
     const cubes = document.querySelectorAll('.cube');
     const heading = document.querySelector('h1');
+    const newgame = document.querySelector('.newgame');
     const audioManage = audio();
     document.addEventListener(
         'click',
@@ -89,6 +90,11 @@ function gameController() {
             }
         });
     });
+
+    newgame.addEventListener('click',()=>{
+        location.reload();
+    })
+
 }
 
 gameController();
