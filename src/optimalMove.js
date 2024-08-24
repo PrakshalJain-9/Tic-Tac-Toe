@@ -10,12 +10,32 @@ export default function optimalMove(activeSign, computerSign) {
 
     function evaluate(board) {
         for (let i = 0; i < 3; i++) {
-            if (board[i][0] === board[i][1] && board[i][1] === board[i][2] && board[i][0] !== '') return board[i][0] === computerSign ? 10 : -10;
-            if (board[0][i] === board[1][i] && board[1][i] === board[2][i] && board[0][i] !== '') return board[0][i] === computerSign ? 10 : -10;
+            if (
+                board[i][0] === board[i][1] &&
+                board[i][1] === board[i][2] &&
+                board[i][0] !== ''
+            )
+                return board[i][0] === computerSign ? 10 : -10;
+            if (
+                board[0][i] === board[1][i] &&
+                board[1][i] === board[2][i] &&
+                board[0][i] !== ''
+            )
+                return board[0][i] === computerSign ? 10 : -10;
         }
 
-        if (board[0][0] === board[1][1] && board[1][1] === board[2][2] && board[1][1] !== '') return board[1][1] === computerSign ? 10 : -10;
-        if (board[2][0] === board[1][1] && board[1][1] === board[0][2] && board[1][1] !== '') return board[1][1] === computerSign ? 10 : -10;
+        if (
+            board[0][0] === board[1][1] &&
+            board[1][1] === board[2][2] &&
+            board[1][1] !== ''
+        )
+            return board[1][1] === computerSign ? 10 : -10;
+        if (
+            board[2][0] === board[1][1] &&
+            board[1][1] === board[0][2] &&
+            board[1][1] !== ''
+        )
+            return board[1][1] === computerSign ? 10 : -10;
 
         return 0;
     }
@@ -33,7 +53,10 @@ export default function optimalMove(activeSign, computerSign) {
                 for (let j = 0; j < 3; j++) {
                     if (board[i][j] === '') {
                         board[i][j] = computerSign;
-                        bestscore = Math.max(bestscore, minmax(board, !isMax, depth + 1) - depth);
+                        bestscore = Math.max(
+                            bestscore,
+                            minmax(board, !isMax, depth + 1) - depth
+                        );
                         board[i][j] = '';
                     }
                 }
@@ -45,7 +68,10 @@ export default function optimalMove(activeSign, computerSign) {
                 for (let j = 0; j < 3; j++) {
                     if (board[i][j] === '') {
                         board[i][j] = activeSign;
-                        bestscore = Math.min(bestscore, minmax(board, !isMax, depth + 1) + depth);
+                        bestscore = Math.min(
+                            bestscore,
+                            minmax(board, !isMax, depth + 1) + depth
+                        );
                         board[i][j] = '';
                     }
                 }

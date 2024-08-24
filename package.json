@@ -1,32 +1,35 @@
 {
-  "name": "tic-tac-toe",
-  "version": "1.0.0",
-  "main": "gamecontroller.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve --open",
-    "build": "webpack"
-  },
-  "keywords": [
-    "A",
-    "Computer",
-    "playing",
-    "the",
-    "tic-tac-toe",
-    "optimally",
-    "against",
-    "user"
-  ],
-  "author": "Prakshal Jain",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "css-loader": "^7.1.2",
-    "file-loader": "^6.2.0",
-    "html-webpack-plugin": "^5.6.0",
-    "style-loader": "^4.0.0",
-    "webpack": "^5.93.0",
-    "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.0.4"
-  }
+    "name": "tic-tac-toe",
+    "version": "1.0.0",
+    "main": "gamecontroller.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "webpack serve --open",
+        "build": "webpack"
+    },
+    "keywords": [
+        "A",
+        "Computer",
+        "playing",
+        "the",
+        "tic-tac-toe",
+        "optimally",
+        "against",
+        "user"
+    ],
+    "author": "Prakshal Jain",
+    "license": "ISC",
+    "description": "",
+    "devDependencies": {
+        "@eslint/js": "^9.7.0",
+        "css-loader": "^7.1.2",
+        "eslint": "^9.7.0",
+        "file-loader": "^6.2.0",
+        "html-webpack-plugin": "^5.6.0",
+        "prettier": "3.3.3",
+        "style-loader": "^4.0.0",
+        "webpack": "^5.93.0",
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^5.0.4"
+    }
 }

@@ -1,3 +1,5 @@
+import optimalMove from './optimalMove.js';
+
 // export function audio() {
 //     const audioManager = {
 //         backgroundMusic: new Audio('./mario_forever.mp3'),
@@ -28,11 +30,8 @@
 //     return { Initialize, MoveSound, EndGame, stopAll };
 // }
 
-
-
-
 export function opening() {
-    const name = "Player 1";
+    const name = 'Player 1';
     const getname = () => name;
 
     function assignment(cubes) {
@@ -149,7 +148,7 @@ export function gameboard() {
 //     return { giveBest, isFull, evaluate, isEmpty };
 // }
 
-export function toggler(players) {
+export function toggler(players, board) {
     function swap() {
         let sign = players[0].Sign;
         players[0].Sign = players[1].Sign;
@@ -157,11 +156,25 @@ export function toggler(players) {
         console.log(players);
     }
 
+    function firstChance() {
+        if (players[1].Sign == 'X') {
+            const move = optimalMove('O', 'X');
+            console.log('insid');
+            const computerMove = move.giveBest(board);
+            board[computerMove.row][computerMove.col] = 'X';
+            document.querySelector(
+                `.cube[data-row="${computerMove.row}"][data-col="${computerMove.col}"]`
+            ).textContent = 'X';
+        }
+    }
+
     function toggle(e) {
         if (!e.target.classList.contains('selected')) {
             document.querySelector('.selected').classList.remove('selected');
             e.target.classList.add('selected');
             swap();
+            console.log(players[1].Sign);
+            firstChance();
         }
     }
 
@@ -171,12 +184,16 @@ export function toggler(players) {
 export function checker(board) {
     function isAllowed(row, col) {
         if (board[row][col] === '') return true;
-        alert('Can\'t use a filled square');
+        alert("Can't use a filled square");
         return false;
     }
 
     function stopTheGame(computerMove, getmove) {
-        return computerMove.row === -1 || computerMove.col === -1 || getmove.evaluate(board) !== 0;
+        return (
+            computerMove.row === -1 ||
+            computerMove.col === -1 ||
+            getmove.evaluate(board) !== 0
+        );
     }
 
     return { isAllowed, stopTheGame };
@@ -192,7 +209,6 @@ export function checker(board) {
 //     document.addEventListener('click', () => {
 //         audioManage.Initialize();
 //     }, { once: true });
-
 
 //     cross.classList.add('selected');
 
@@ -227,7 +243,6 @@ export function checker(board) {
 //         }
 //     });
 
-
 //     cubes.forEach(cube => {
 //         cube.addEventListener('click', (e) => {
 //             if (getmove.evaluate(board) !== 0) {
@@ -240,7 +255,6 @@ export function checker(board) {
 //             const col = e.target.dataset.col;
 
 //             const check = checker(board);
-
 
 //             if (check.isAllowed(row, col)) {
 //                 board[row][col] = players[0].Sign;
@@ -270,4 +284,3 @@ export function checker(board) {
 // }
 
 // gameController();
-

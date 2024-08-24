@@ -10,19 +10,25 @@ export default function audio() {
     };
     function Initialize() {
         audioManager.backgroundMusic.loop = true;
-        audioManager.backgroundMusic.play().catch(error => console.log('Background music error:', error));
+        audioManager.backgroundMusic
+            .play()
+            .catch((error) => console.error('Background music error:', error));
     }
 
     function MoveSound() {
-        audioManager.moveSound.play().catch(error => console.log('Move sound error:', error));
+        audioManager.moveSound
+            .play()
+            .catch((error) => console.error('Move sound error:', error));
     }
 
     function EndGame() {
-        audioManager.endGameSound.play().catch(error => console.log('End game sound error:', error));
+        audioManager.endGameSound
+            .play()
+            .catch((error) => console.error('End game sound error:', error));
     }
 
     function stopAll() {
-        Object.values(audioManager).forEach(audio => {
+        Object.values(audioManager).forEach((audio) => {
             if (audio instanceof Audio) {
                 audio.pause();
                 audio.currentTime = 0;
